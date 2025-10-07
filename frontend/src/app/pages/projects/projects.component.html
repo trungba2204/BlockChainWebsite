@@ -1,0 +1,56 @@
+<app-header></app-header>
+
+<main class="projects-page">
+  <section class="hero-section">
+    <div class="container">
+      <h1 class="page-title">Projects</h1>
+      <p class="page-description">
+        Discover the tangible impact of our expertise in Blockchain, Data Engineering, and AI through our showcase of remarkable projects. 
+        From cutting-edge solutions for businesses to innovative applications that drive social change, each project embodies our commitment 
+        to excellence and innovation. Explore the success stories and witness how our transformative technologies are shaping industries and 
+        empowering our clients to thrive in an interconnected world.
+      </p>
+    </div>
+  </section>
+
+  <section class="projects-section">
+    <div class="container">
+      <div *ngIf="loading" class="loading">
+        <div class="spinner"></div>
+      </div>
+
+      <div *ngIf="!loading && projects.length > 0" class="projects-grid">
+        <div *ngFor="let project of projects" class="project-card">
+          <div class="project-image">
+            <img [src]="project.imageUrl || 'assets/images/default-project.jpg'" [alt]="project.title" />
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+            <button class="btn-primary">Request a project</button>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="!loading && projects.length === 0" class="no-data">
+        <p>No projects available at the moment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">Let's work together!</h2>
+        <p class="cta-description">
+          Take the first step towards a transformative future by partnering with us today. 
+          Explore our cutting-edge solutions in Blockchain, Data Engineering, and AI, 
+          and experience the power of innovation and seamless connectivity.
+        </p>
+        <button class="btn-primary" routerLink="/contact">Request a project</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<app-footer></app-footer>

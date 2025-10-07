@@ -1,0 +1,150 @@
+<app-header></app-header>
+
+<main class="home-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1 class="hero-title">
+        <span class="gradient-text">Unlocking the Future of Blockchain</span>
+      </h1>
+      
+      <div class="hero-content">
+        <div class="hero-text">
+          <h2 class="hero-subtitle">
+            <span class="highlight-text">Safeguarding the Digital Landscape</span>
+            <div class="hero-image-inline">
+              <img src="assets/images/security-icon.png" alt="Security" />
+            </div>
+          </h2>
+          
+          <div class="hero-subtitle-2">
+            <div class="hero-image-inline-2">
+              <img src="assets/images/blockchain-icon.png" alt="Blockchain" />
+            </div>
+            <span class="highlight-text">with Cutting-Edge Security.</span>
+          </div>
+          
+          <p class="hero-description">
+            Lorem ipsum dolor sit amet consectetur. Mi amet urna vestibulum interdum enim vestibulum est lobortis eget. 
+            Gravida turpis ante tortor odio nunc sit at sem pulvinar. Nunc netus lectus a ut malesuada tortor massa. 
+            Velit nunc proin dignissim.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diversity Section -->
+  <section class="diversity-section">
+    <div class="container">
+      <div class="diversity-content">
+        <div class="diversity-image">
+          <img src="assets/images/diversity.svg" alt="Diversity" />
+        </div>
+        <p class="diversity-text">
+          we prioritize your needs, working tirelessly to enhance your quality of life through cutting-edge solutions. 
+          With a passion for excellence and unwavering integrity, we forge trustworthy partnerships with our valued clients. 
+          Join us to achieve the impossible together!
+        </p>
+        <div class="diversity-icon">
+          <img src="assets/images/target.png" alt="Target" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="features-header">
+        <h2 class="section-title">Pioneering<br>Blockchain<br>Technology</h2>
+        <button class="btn-primary" routerLink="/projects">Request a project</button>
+      </div>
+
+      <div class="features-grid">
+        <div *ngFor="let feature of features" class="feature-card">
+          <div class="feature-content">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 28 28">
+                <circle cx="14" cy="14" r="14" fill="rgba(255, 255, 255, 0.4)"/>
+              </svg>
+            </div>
+            <div class="feature-text">
+              <h3>{{ feature.title }}</h3>
+              <p>{{ feature.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Values Section -->
+  <section class="values-section">
+    <div class="container">
+      <div class="values-header">
+        <h2 class="section-title">Embark on an Exciting Journey into the Future of Technology</h2>
+        <button class="btn-primary" routerLink="/projects">Request a project</button>
+        <div class="value-image">
+          <img src="assets/images/puzzle.png" alt="Puzzle" />
+        </div>
+      </div>
+
+      <div class="values-grid">
+        <div *ngFor="let value of companyValues" class="value-card">
+          <div class="value-content">
+            <h3>{{ value.title }}</h3>
+            <p>{{ value.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner Logos Scroll -->
+  <section class="partners-section">
+    <div class="partners-scroll">
+      <div class="partners-track">
+        <div *ngFor="let partner of partners" class="partner-item">
+          <svg width="24" height="24" viewBox="0 0 24 24">
+            <rect width="24" height="24" fill="#FFFFFF" rx="4"/>
+          </svg>
+          <span>{{ partner }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Grid Section -->
+  <section class="photo-grid-section">
+    <div class="container">
+      <div class="photo-grid">
+        <div class="photo-item" *ngFor="let i of [1,2,3,4,5,6]">
+          <img src="assets/images/team-{{i}}.jpg" alt="Team member {{i}}" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">Let's work together!</h2>
+        <p class="cta-description">
+          Take the first step towards a transformative future by partnering with us today. 
+          Explore our cutting-edge solutions in Blockchain, Data Engineering, and AI, 
+          and experience the power of innovation and seamless connectivity. 
+          Contact us now for a personalized consultation, and together, let's build a brighter tomorrow. 
+          Your success awaits!
+        </p>
+        <button class="btn-primary" routerLink="/contact">Request a project</button>
+      </div>
+      <div class="cta-image">
+        <img src="assets/images/3d-shapes.png" alt="3D Shapes" />
+      </div>
+    </div>
+  </section>
+</main>
+
+<app-footer></app-footer>

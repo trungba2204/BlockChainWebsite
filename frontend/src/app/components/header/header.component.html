@@ -1,0 +1,66 @@
+<header class="header">
+  <div class="container">
+    <nav class="navbar">
+      <!-- Logo -->
+      <div class="logo">
+        <a routerLink="/">
+          <svg width="60" height="60" viewBox="0 0 60 60">
+            <!-- Placeholder SVG - Replace with actual logo -->
+            <rect width="60" height="60" fill="#0014F4" rx="8"/>
+          </svg>
+          <span class="logo-text">Your Logo Here</span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <ul class="nav-menu desktop-menu">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-tab">Home</a></li>
+        <li><a routerLink="/about" routerLinkActive="active" class="nav-tab">About Us</a></li>
+        <li><a routerLink="/projects" routerLinkActive="active" class="nav-tab">Projects</a></li>
+        <li><a routerLink="/blog" routerLinkActive="active" class="nav-tab">Blog</a></li>
+        <li><a routerLink="/careers" routerLinkActive="active" class="nav-tab">Careers</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active" class="nav-tab nav-tab-inverse">Contact Us</a></li>
+      </ul>
+
+      <!-- User Menu -->
+      <div class="user-menu">
+        <ng-container *ngIf="isLoggedIn; else loginTemplate">
+          <span class="username">{{ username }}</span>
+          <a *ngIf="isAdmin" routerLink="/admin" class="nav-tab">Admin</a>
+          <button (click)="logout()" class="btn-logout">Logout</button>
+        </ng-container>
+        <ng-template #loginTemplate>
+          <a routerLink="/login" class="nav-tab">Login</a>
+          <a routerLink="/signup" class="btn-primary">Sign Up</a>
+        </ng-template>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" [class.active]="isMobileMenuOpen">
+      <ul class="nav-menu">
+        <li><a routerLink="/" (click)="toggleMobileMenu()" class="nav-tab-mobile">Home</a></li>
+        <li><a routerLink="/about" (click)="toggleMobileMenu()" class="nav-tab-mobile">About Us</a></li>
+        <li><a routerLink="/projects" (click)="toggleMobileMenu()" class="nav-tab-mobile">Projects</a></li>
+        <li><a routerLink="/blog" (click)="toggleMobileMenu()" class="nav-tab-mobile">Blog</a></li>
+        <li><a routerLink="/careers" (click)="toggleMobileMenu()" class="nav-tab-mobile">Careers</a></li>
+        <li><a routerLink="/contact" (click)="toggleMobileMenu()" class="nav-tab-mobile">Contact Us</a></li>
+        <ng-container *ngIf="isLoggedIn">
+          <li *ngIf="isAdmin"><a routerLink="/admin" (click)="toggleMobileMenu()" class="nav-tab-mobile">Admin</a></li>
+          <li><a (click)="logout(); toggleMobileMenu()" class="nav-tab-mobile">Logout</a></li>
+        </ng-container>
+        <ng-container *ngIf="!isLoggedIn">
+          <li><a routerLink="/login" (click)="toggleMobileMenu()" class="nav-tab-mobile">Login</a></li>
+          <li><a routerLink="/signup" (click)="toggleMobileMenu()" class="nav-tab-mobile">Sign Up</a></li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</header>

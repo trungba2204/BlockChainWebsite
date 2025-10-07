@@ -1,0 +1,116 @@
+<div class="management-page">
+  <div class="page-header">
+    <h1>Career Management</h1>
+    <button class="btn-primary" (click)="openCreateForm()" *ngIf="!isEditing">
+      ➕ Add Job Opening
+    </button>
+  </div>
+
+  <div class="edit-form" *ngIf="isEditing">
+    <h2>{{ selectedCareer ? 'Edit Career' : 'Create New Career' }}</h2>
+    
+    <form (ngSubmit)="saveCareer()">
+      <div class="form-grid">
+        <div class="form-group full-width">
+          <label>Job Title *</label>
+          <input type="text" [(ngModel)]="newCareer.title" name="title" required />
+        </div>
+
+        <div class="form-group">
+          <label>Job Type *</label>
+          <select [(ngModel)]="newCareer.jobType" name="jobType" required>
+            <option *ngFor="let type of jobTypes" [value]="type">{{ type }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Work Location *</label>
+          <select [(ngModel)]="newCareer.workLocation" name="workLocation" required>
+            <option *ngFor="let loc of workLocations" [value]="loc">{{ loc }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Location</label>
+          <input type="text" [(ngModel)]="newCareer.location" name="location" />
+        </div>
+
+        <div class="form-group">
+          <label>Salary Range</label>
+          <input type="text" [(ngModel)]="newCareer.salaryRange" name="salaryRange" />
+        </div>
+
+        <div class="form-group full-width">
+          <label>Description</label>
+          <textarea [(ngModel)]="newCareer.description" name="description" rows="4"></textarea>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Requirements</label>
+          <textarea [(ngModel)]="newCareer.requirements" name="requirements" rows="6"></textarea>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Responsibilities</label>
+          <textarea [(ngModel)]="newCareer.responsibilities" name="responsibilities" rows="6"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" [(ngModel)]="newCareer.active" name="active" />
+            Active
+          </label>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary" [disabled]="loading">
+          {{ loading ? 'Saving...' : 'Save Career' }}
+        </button>
+        <button type="button" class="btn-secondary" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="data-table" *ngIf="!isEditing">
+    <div *ngIf="loading" class="loading">
+      <div class="spinner"></div>
+    </div>
+
+    <table *ngIf="!loading && careers.length > 0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Type</th>
+          <th>Location</th>
+          <th>Active</th>
+          <th>Created</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let career of careers">
+          <td>{{ career.id }}</td>
+          <td>{{ career.title }}</td>
+          <td>{{ career.jobType }}</td>
+          <td>{{ career.workLocation }}</td>
+          <td>
+            <span class="badge" [class.badge-success]="career.active" [class.badge-warning]="!career.active">
+              {{ career.active ? 'Yes' : 'No' }}
+            </span>
+          </td>
+          <td>{{ career.createdAt | date: 'short' }}</td>
+          <td>
+            <button class="btn-edit" (click)="editCareer(career)">✏️</button>
+            <button class="btn-delete" (click)="deleteCareer(career.id!)">🗑️</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="!loading && careers.length === 0" class="no-data">
+      <p>No careers yet. Create your first job opening!</p>
+    </div>
+  </div>
+</div>

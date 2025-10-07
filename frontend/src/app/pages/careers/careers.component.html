@@ -1,0 +1,63 @@
+<app-header></app-header>
+
+<main class="careers-page">
+  <section class="hero-section">
+    <div class="container">
+      <h1 class="page-title">Careers</h1>
+      <p class="page-description">
+        Ready to embark on an exciting career journey filled with innovation and growth? At Your Company Name, 
+        we offer a vibrant and inclusive work environment that fosters creativity and collaboration. 
+        Join our team of talented professionals from diverse backgrounds and explore endless opportunities 
+        in Blockchain, Data Engineering, and AI.
+      </p>
+    </div>
+  </section>
+
+  <section class="careers-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">We are hiring</h2>
+        <button class="btn-primary" routerLink="/contact">Open Application</button>
+      </div>
+
+      <div *ngIf="loading" class="loading">
+        <div class="spinner"></div>
+      </div>
+
+      <div *ngIf="!loading && careers.length > 0" class="careers-list">
+        <div *ngFor="let career of careers" class="career-card">
+          <div class="career-content">
+            <h3 class="career-title">{{ career.title }}</h3>
+            <div class="career-tags">
+              <span class="tag">{{ career.jobType }}</span>
+              <span class="tag">{{ career.workLocation }}</span>
+            </div>
+          </div>
+          <button class="arrow-btn">
+            <svg width="90" height="90" viewBox="0 0 90 90">
+              <path d="M10 10 L80 45 L10 80" stroke="#FFFFFF" stroke-width="4" fill="none"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div *ngIf="!loading && careers.length === 0" class="no-data">
+        <p>No job openings available at the moment. Check back soon!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">Let's work together!</h2>
+        <p class="cta-description">
+          Take the first step towards a transformative future by partnering with us today.
+        </p>
+        <button class="btn-primary" routerLink="/contact">Request a project</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<app-footer></app-footer>

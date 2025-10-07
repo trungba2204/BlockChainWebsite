@@ -1,0 +1,38 @@
+<app-header></app-header>
+
+<main class="blog-detail-page">
+  <div *ngIf="loading" class="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <article *ngIf="!loading && blog" class="blog-article">
+    <div class="container">
+      <header class="article-header">
+        <h1 class="article-title">{{ blog.title }}</h1>
+        <div class="article-meta">
+          <span class="author">By {{ blog.author }}</span>
+          <span class="date">{{ blog.createdAt | date: 'MMMM dd, yyyy' }}</span>
+          <span class="views">{{ blog.viewCount }} views</span>
+        </div>
+      </header>
+
+      <div class="article-image" *ngIf="blog.imageUrl">
+        <img [src]="blog.imageUrl" [alt]="blog.title" />
+      </div>
+
+      <div class="article-content" [innerHTML]="blog.content">
+      </div>
+
+      <footer class="article-footer">
+        <button class="btn-outline" routerLink="/blog">← Back to Blog</button>
+      </footer>
+    </div>
+  </article>
+
+  <div *ngIf="!loading && !blog" class="not-found">
+    <h2>Blog post not found</h2>
+    <button class="btn-primary" routerLink="/blog">Back to Blog</button>
+  </div>
+</main>
+
+<app-footer></app-footer>

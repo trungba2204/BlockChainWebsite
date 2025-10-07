@@ -1,0 +1,39 @@
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <h2>Admin Panel</h2>
+      <p class="admin-user">{{ username }}</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a routerLink="/admin/dashboard" routerLinkActive="active" class="nav-item">
+        <span>📊 Dashboard</span>
+      </a>
+      <a routerLink="/admin/blogs" routerLinkActive="active" class="nav-item">
+        <span>📝 Blogs</span>
+      </a>
+      <a routerLink="/admin/projects" routerLinkActive="active" class="nav-item">
+        <span>🚀 Projects</span>
+      </a>
+      <a routerLink="/admin/team" routerLinkActive="active" class="nav-item">
+        <span>👥 Team Members</span>
+      </a>
+      <a routerLink="/admin/careers" routerLinkActive="active" class="nav-item">
+        <span>💼 Careers</span>
+      </a>
+      <a routerLink="/admin/contacts" routerLinkActive="active" class="nav-item">
+        <span>📧 Contacts</span>
+      </a>
+      <a routerLink="/" class="nav-item">
+        <span>🏠 Back to Website</span>
+      </a>
+      <a (click)="logout()" class="nav-item logout">
+        <span>🚪 Logout</span>
+      </a>
+    </nav>
+  </aside>
+
+  <main class="admin-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

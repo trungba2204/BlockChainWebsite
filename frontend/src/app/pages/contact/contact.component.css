@@ -1,0 +1,154 @@
+.hero-section {
+  padding: 120px 0 60px;
+}
+
+.page-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 128px;
+  line-height: 1.125em;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 60px;
+}
+
+.page-description {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.35em;
+  text-align: center;
+  max-width: 986px;
+  margin: 0 auto;
+  color: #FFFFFF;
+}
+
+.contact-section {
+  padding: 60px 0 120px;
+}
+
+.contact-wrapper {
+  max-width: 916px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  background-color: #FFFFFF;
+  padding: 60px;
+  border-radius: 8px;
+}
+
+.success-message {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.error-message {
+  background-color: #f44336;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.form-group {
+  margin-bottom: 40px;
+}
+
+.form-group label {
+  display: block;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.172em;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  color: #17181D;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 20px;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.35em;
+  color: #17181D;
+  background-color: #FFFFFF;
+  border: 2px solid #383A41;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #0014F4;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #383A41;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 200px;
+}
+
+.btn-primary[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.social-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.social-title {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.172em;
+  color: #17181D;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.social-link {
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 32px;
+  }
+
+  .contact-form {
+    padding: 30px 20px;
+  }
+
+  .form-group label,
+  .form-group input,
+  .form-group textarea {
+    font-size: 18px;
+  }
+}

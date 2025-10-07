@@ -1,0 +1,216 @@
+.hero-section {
+  padding: 120px 0 60px;
+}
+
+.page-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.26em;
+  letter-spacing: 4%;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 40px;
+}
+
+.page-description {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.172em;
+  letter-spacing: 7.11%;
+  text-align: center;
+  max-width: 986px;
+  margin: 0 auto;
+  color: #FFFFFF;
+}
+
+.life-section,
+.team-section {
+  padding: 60px 0;
+  border-top: 1px solid #383A41;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 90px;
+}
+
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 1.188em;
+  color: #FFFFFF;
+  margin-bottom: 40px;
+}
+
+.section-description {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.172em;
+  color: #FFFFFF;
+  max-width: 986px;
+  margin: 0 auto 40px;
+}
+
+.office-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.photo-card {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid #383A41;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.photo-card:hover img {
+  transform: scale(1.05);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.team-card {
+  background-color: rgba(35, 37, 44, 0.5);
+  border: 1px solid #383A41;
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 20, 244, 0.2);
+}
+
+.team-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.team-member-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.team-member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-info h3 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.357em;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.member-name {
+  background: #17181D;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.member-position {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.556em;
+  color: #FFFFFF;
+  padding: 0 10px;
+}
+
+.arrow-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.arrow-btn:hover {
+  transform: translateX(5px);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.cta-section {
+  padding: 72px 0;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 1267px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 128px;
+  line-height: 1.125em;
+  color: #FFFFFF;
+  margin-bottom: 60px;
+}
+
+.cta-description {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.172em;
+  color: #FFFFFF;
+  max-width: 986px;
+  margin: 0 auto 40px;
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 32px;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  .cta-title {
+    font-size: 64px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .office-photos {
+    grid-template-columns: 1fr;
+  }
+}

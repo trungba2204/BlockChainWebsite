@@ -1,0 +1,100 @@
+<div class="management-page">
+  <div class="page-header">
+    <h1>Project Management</h1>
+    <button class="btn-primary" (click)="openCreateForm()" *ngIf="!isEditing">
+      ➕ Add New Project
+    </button>
+  </div>
+
+  <div class="edit-form" *ngIf="isEditing">
+    <h2>{{ selectedProject ? 'Edit Project' : 'Create New Project' }}</h2>
+    
+    <form (ngSubmit)="saveProject()">
+      <div class="form-grid">
+        <div class="form-group full-width">
+          <label>Title *</label>
+          <input type="text" [(ngModel)]="newProject.title" name="title" required />
+        </div>
+
+        <div class="form-group full-width">
+          <label>Image URL</label>
+          <input type="text" [(ngModel)]="newProject.imageUrl" name="imageUrl" />
+        </div>
+
+        <div class="form-group full-width">
+          <label>Client Name</label>
+          <input type="text" [(ngModel)]="newProject.clientName" name="clientName" />
+        </div>
+
+        <div class="form-group full-width">
+          <label>Project URL</label>
+          <input type="text" [(ngModel)]="newProject.projectUrl" name="projectUrl" />
+        </div>
+
+        <div class="form-group full-width">
+          <label>Description</label>
+          <textarea [(ngModel)]="newProject.description" name="description" rows="4"></textarea>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Detail Content</label>
+          <textarea [(ngModel)]="newProject.detailContent" name="detailContent" rows="10"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" [(ngModel)]="newProject.featured" name="featured" />
+            Featured Project
+          </label>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary" [disabled]="loading">
+          {{ loading ? 'Saving...' : 'Save Project' }}
+        </button>
+        <button type="button" class="btn-secondary" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="data-table" *ngIf="!isEditing">
+    <div *ngIf="loading" class="loading">
+      <div class="spinner"></div>
+    </div>
+
+    <table *ngIf="!loading && projects.length > 0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Client</th>
+          <th>Featured</th>
+          <th>Created</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of projects">
+          <td>{{ project.id }}</td>
+          <td>{{ project.title }}</td>
+          <td>{{ project.clientName || '-' }}</td>
+          <td>
+            <span class="badge" [class.badge-success]="project.featured" [class.badge-warning]="!project.featured">
+              {{ project.featured ? 'Yes' : 'No' }}
+            </span>
+          </td>
+          <td>{{ project.createdAt | date: 'short' }}</td>
+          <td>
+            <button class="btn-edit" (click)="editProject(project)">✏️</button>
+            <button class="btn-delete" (click)="deleteProject(project.id!)">🗑️</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="!loading && projects.length === 0" class="no-data">
+      <p>No projects yet. Create your first project!</p>
+    </div>
+  </div>
+</div>

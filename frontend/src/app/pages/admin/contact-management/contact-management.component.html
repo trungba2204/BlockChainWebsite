@@ -1,0 +1,75 @@
+<div class="management-page">
+  <div class="page-header">
+    <h1>Contact Management</h1>
+  </div>
+
+  <!-- Contact Details Modal -->
+  <div class="modal" *ngIf="selectedContact" (click)="closeDetails()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h2>Contact Details</h2>
+        <button class="btn-close" (click)="closeDetails()">✕</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Name:</strong> {{ selectedContact.name }}</p>
+        <p><strong>Email:</strong> {{ selectedContact.email }}</p>
+        <p><strong>Subject:</strong> {{ selectedContact.subject }}</p>
+        <p><strong>Message:</strong></p>
+        <p class="message-content">{{ selectedContact.message }}</p>
+        <p><strong>Status:</strong> {{ selectedContact.status }}</p>
+        <p><strong>Received:</strong> {{ selectedContact.createdAt | date: 'medium' }}</p>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-primary" (click)="updateStatus(selectedContact.id!, 'RESOLVED')">
+          Mark as Resolved
+        </button>
+        <button class="btn-secondary" (click)="closeDetails()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="data-table">
+    <div *ngIf="loading" class="loading">
+      <div class="spinner"></div>
+    </div>
+
+    <table *ngIf="!loading && contacts.length > 0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Subject</th>
+          <th>Status</th>
+          <th>Created</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contact of contacts">
+          <td>{{ contact.id }}</td>
+          <td>{{ contact.name }}</td>
+          <td>{{ contact.email }}</td>
+          <td>{{ contact.subject || '-' }}</td>
+          <td>
+            <span class="badge" 
+                  [class.badge-success]="contact.status === 'RESOLVED'"
+                  [class.badge-warning]="contact.status === 'NEW'"
+                  [class.badge-info]="contact.status === 'IN_PROGRESS'">
+              {{ contact.status }}
+            </span>
+          </td>
+          <td>{{ contact.createdAt | date: 'short' }}</td>
+          <td>
+            <button class="btn-edit" (click)="viewDetails(contact)">👁️</button>
+            <button class="btn-delete" (click)="deleteContact(contact.id!)">🗑️</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="!loading && contacts.length === 0" class="no-data">
+      <p>No contact messages yet.</p>
+    </div>
+  </div>
+</div>

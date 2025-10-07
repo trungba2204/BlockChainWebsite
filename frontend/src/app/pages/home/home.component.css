@@ -1,0 +1,392 @@
+.hero-section {
+  padding: 40px 0;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-title {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.172em;
+  letter-spacing: 3.2%;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 1.26em;
+  letter-spacing: 2%;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-subtitle-2 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 1.26em;
+  letter-spacing: 2%;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: flex-end;
+}
+
+.hero-image-inline img {
+  width: 112px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.hero-image-inline-2 img {
+  width: 112px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.hero-description {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.35em;
+  letter-spacing: 7.11%;
+  text-align: center;
+  max-width: 627px;
+  margin: 0 auto;
+  color: #FFFFFF;
+}
+
+.diversity-section {
+  padding: 60px 0;
+}
+
+.diversity-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.diversity-image {
+  width: 100%;
+  max-width: 504px;
+}
+
+.diversity-image img {
+  width: 100%;
+  height: auto;
+}
+
+.diversity-text {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 1.26em;
+  letter-spacing: 2.67%;
+  text-align: center;
+  max-width: 670px;
+  color: #FFFFFF;
+}
+
+.diversity-icon {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+}
+
+.diversity-icon img {
+  width: 162px;
+  height: 162px;
+}
+
+.features-section {
+  padding: 60px 0;
+  border-top: 1px solid #383A41;
+}
+
+.features-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 90px;
+}
+
+.features-header .section-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 1.188em;
+  text-align: left;
+  margin: 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1px;
+  background-color: #383A41;
+  border: 1px solid #383A41;
+}
+
+.feature-card {
+  background-color: #17181D;
+  padding: 72px 117px;
+}
+
+.feature-content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-text h3 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.357em;
+  color: #D9D9D9;
+  margin-bottom: 14px;
+}
+
+.feature-text p {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.556em;
+  color: #FFFFFF;
+}
+
+.values-section {
+  padding: 60px 0;
+  border-top: 1px solid #383A41;
+}
+
+.values-header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.values-header .section-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 1.188em;
+  max-width: 486px;
+  margin: 0 auto 90px;
+}
+
+.value-image {
+  position: absolute;
+  top: -72px;
+  right: 0;
+}
+
+.value-image img {
+  width: 408px;
+  height: 306px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.value-card {
+  background-color: rgba(35, 37, 44, 0.5);
+  border: 1px solid #383A41;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.value-content h3 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.357em;
+  color: #D9D9D9;
+  margin-bottom: 14px;
+}
+
+.value-content p {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.556em;
+  color: #FFFFFF;
+}
+
+.partners-section {
+  background-color: #23252C;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.partners-scroll {
+  width: 100%;
+  overflow: hidden;
+}
+
+.partners-track {
+  display: flex;
+  gap: 10px;
+  animation: scroll 30s linear infinite;
+}
+
+.partner-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9.5px 0;
+  white-space: nowrap;
+}
+
+.partner-item span {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.35em;
+  color: #FFFFFF;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.photo-grid-section {
+  padding: 60px 0;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.photo-item {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+  transform: scale(1.05);
+}
+
+.cta-section {
+  padding: 72px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.cta-content {
+  max-width: 1267px;
+}
+
+.cta-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 128px;
+  line-height: 1.125em;
+  color: #FFFFFF;
+  margin-bottom: 60px;
+}
+
+.cta-description {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.172em;
+  color: #FFFFFF;
+  margin-bottom: 40px;
+}
+
+.cta-image {
+  position: relative;
+}
+
+.cta-image img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  .hero-subtitle,
+  .hero-subtitle-2 {
+    font-size: 32px;
+  }
+
+  .features-header {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    padding: 20px;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-section .container {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-title {
+    font-size: 64px;
+  }
+}

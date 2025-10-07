@@ -1,0 +1,101 @@
+<div class="auth-page">
+  <div class="auth-container">
+    <div class="auth-box">
+      <div class="logo-section">
+        <svg width="60" height="60" viewBox="0 0 60 60">
+          <rect width="60" height="60" fill="#0014F4" rx="8"/>
+        </svg>
+        <h2>Your Logo Here</h2>
+      </div>
+
+      <h1 class="auth-title">Sign Up</h1>
+      <p class="auth-subtitle">Create your account to get started.</p>
+
+      <div *ngIf="error" class="error-message">
+        {{ error }}
+      </div>
+
+      <div *ngIf="success" class="success-message">
+        Account created successfully! Redirecting to login...
+      </div>
+
+      <form (ngSubmit)="onSubmit()" class="auth-form">
+        <div class="form-group">
+          <label>Username *</label>
+          <input 
+            type="text" 
+            [(ngModel)]="signupData.username" 
+            name="username" 
+            placeholder="Choose a username"
+            required
+            minlength="3"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Email *</label>
+          <input 
+            type="email" 
+            [(ngModel)]="signupData.email" 
+            name="email" 
+            placeholder="your@email.com"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Full Name</label>
+          <input 
+            type="text" 
+            [(ngModel)]="signupData.fullName" 
+            name="fullName" 
+            placeholder="Your full name"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Phone</label>
+          <input 
+            type="tel" 
+            [(ngModel)]="signupData.phone" 
+            name="phone" 
+            placeholder="Your phone number"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Password *</label>
+          <input 
+            type="password" 
+            [(ngModel)]="signupData.password" 
+            name="password" 
+            placeholder="Choose a strong password"
+            required
+            minlength="6"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Confirm Password *</label>
+          <input 
+            type="password" 
+            [(ngModel)]="confirmPassword" 
+            name="confirmPassword" 
+            placeholder="Confirm your password"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn-primary btn-full" [disabled]="loading">
+          <span *ngIf="!loading">Sign Up</span>
+          <span *ngIf="loading">Creating account...</span>
+        </button>
+      </form>
+
+      <div class="auth-footer">
+        <p>Already have an account? <a routerLink="/login">Login</a></p>
+        <p><a routerLink="/">← Back to Home</a></p>
+      </div>
+    </div>
+  </div>
+</div>

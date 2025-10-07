@@ -1,0 +1,60 @@
+<app-header></app-header>
+
+<main class="blog-page">
+  <section class="hero-section">
+    <div class="container">
+      <h1 class="page-title">Blog</h1>
+      <p class="page-description">
+        Welcome to our insightful blog, where innovation meets knowledge. Dive into the world of Blockchain, 
+        Data Engineering, and AI through thought-provoking articles, expert insights, and industry trends. 
+        Stay updated with the latest advancements and discover how these transformative technologies are shaping 
+        the future. Join us on this exciting journey as we share valuable information, spark discussions, 
+        and explore the endless possibilities of the digital landscape. Happy reading and let's embark on this 
+        quest for knowledge together!
+      </p>
+    </div>
+  </section>
+
+  <section class="blogs-section">
+    <div class="container">
+      <div *ngIf="loading" class="loading">
+        <div class="spinner"></div>
+      </div>
+
+      <div *ngIf="!loading && blogs.length > 0" class="blogs-grid">
+        <div *ngFor="let blog of blogs" class="blog-card" [routerLink]="['/blog', blog.id]">
+          <div class="blog-image">
+            <img [src]="blog.imageUrl || 'assets/images/default-blog.jpg'" [alt]="blog.title" />
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-title">{{ blog.title }}</h3>
+            <p class="blog-summary">{{ blog.summary }}</p>
+            <div class="blog-meta">
+              <span class="blog-author">{{ blog.author }}</span>
+              <span class="blog-date">{{ blog.createdAt | date: 'MMM dd, yyyy' }}</span>
+            </div>
+            <button class="btn-primary">Read Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="!loading && blogs.length === 0" class="no-data">
+        <p>No blog posts available at the moment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">Let's work together!</h2>
+        <p class="cta-description">
+          Take the first step towards a transformative future by partnering with us today.
+        </p>
+        <button class="btn-primary" routerLink="/contact">Request a project</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<app-footer></app-footer>

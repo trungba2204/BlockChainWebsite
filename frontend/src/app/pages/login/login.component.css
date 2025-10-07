@@ -1,0 +1,135 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #17181D 0%, #0014F4 100%);
+  padding: 40px 20px;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.auth-box {
+  background-color: #FFFFFF;
+  padding: 60px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 20, 244, 0.3);
+}
+
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.logo-section h2 {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #17181D;
+}
+
+.auth-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: #17181D;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.auth-subtitle {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.error-message {
+  background-color: #fee;
+  color: #c00;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid #fcc;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group label {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #17181D;
+}
+
+.form-group input {
+  padding: 15px 20px;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 16px;
+  color: #17181D;
+  background-color: #FAFAFA;
+  border: 2px solid #E0E0E0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #0014F4;
+  background-color: #FFFFFF;
+}
+
+.btn-full {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.auth-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.auth-footer p {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 16px;
+  color: #666;
+  margin: 10px 0;
+}
+
+.auth-footer a {
+  color: #0014F4;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.auth-footer a:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .auth-box {
+    padding: 40px 30px;
+  }
+
+  .auth-title {
+    font-size: 32px;
+  }
+}

@@ -1,0 +1,53 @@
+<div class="auth-page">
+  <div class="auth-container">
+    <div class="auth-box">
+      <div class="logo-section">
+        <svg width="60" height="60" viewBox="0 0 60 60">
+          <rect width="60" height="60" fill="#0014F4" rx="8"/>
+        </svg>
+        <h2>Your Logo Here</h2>
+      </div>
+
+      <h1 class="auth-title">Login</h1>
+      <p class="auth-subtitle">Welcome back! Please login to your account.</p>
+
+      <div *ngIf="error" class="error-message">
+        {{ error }}
+      </div>
+
+      <form (ngSubmit)="onSubmit()" class="auth-form">
+        <div class="form-group">
+          <label>Username</label>
+          <input 
+            type="text" 
+            [(ngModel)]="credentials.username" 
+            name="username" 
+            placeholder="Enter your username"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input 
+            type="password" 
+            [(ngModel)]="credentials.password" 
+            name="password" 
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn-primary btn-full" [disabled]="loading">
+          <span *ngIf="!loading">Login</span>
+          <span *ngIf="loading">Logging in...</span>
+        </button>
+      </form>
+
+      <div class="auth-footer">
+        <p>Don't have an account? <a routerLink="/signup">Sign up</a></p>
+        <p><a routerLink="/">← Back to Home</a></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="dashboard">
+  <h1 class="page-title">Dashboard</h1>
+  <p class="page-subtitle">Welcome to the admin dashboard. Manage your website content here.</p>
+
+  <div *ngIf="loading" class="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <div *ngIf="!loading" class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-icon">📝</div>
+      <div class="stat-info">
+        <h3>{{ stats.blogs }}</h3>
+        <p>Blog Posts</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">🚀</div>
+      <div class="stat-info">
+        <h3>{{ stats.projects }}</h3>
+        <p>Projects</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">👥</div>
+      <div class="stat-info">
+        <h3>{{ stats.teamMembers }}</h3>
+        <p>Team Members</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">💼</div>
+      <div class="stat-info">
+        <h3>{{ stats.careers }}</h3>
+        <p>Job Openings</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">📧</div>
+      <div class="stat-info">
+        <h3>{{ stats.contacts }}</h3>
+        <p>Contact Messages</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="quick-actions">
+    <h2>Quick Actions</h2>
+    <div class="actions-grid">
+      <button class="action-btn" routerLink="/admin/blogs">
+        <span>➕</span> Add New Blog Post
+      </button>
+      <button class="action-btn" routerLink="/admin/projects">
+        <span>➕</span> Add New Project
+      </button>
+      <button class="action-btn" routerLink="/admin/team">
+        <span>➕</span> Add Team Member
+      </button>
+      <button class="action-btn" routerLink="/admin/careers">
+        <span>➕</span> Add Job Opening
+      </button>
+    </div>
+  </div>
+</div>

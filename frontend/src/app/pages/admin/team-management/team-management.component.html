@@ -1,0 +1,112 @@
+<div class="management-page">
+  <div class="page-header">
+    <h1>Team Management</h1>
+    <button class="btn-primary" (click)="openCreateForm()" *ngIf="!isEditing">
+      ➕ Add Team Member
+    </button>
+  </div>
+
+  <div class="edit-form" *ngIf="isEditing">
+    <h2>{{ selectedMember ? 'Edit Team Member' : 'Add New Team Member' }}</h2>
+    
+    <form (ngSubmit)="saveMember()">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" [(ngModel)]="newMember.fullName" name="fullName" required />
+        </div>
+
+        <div class="form-group">
+          <label>Position *</label>
+          <input type="text" [(ngModel)]="newMember.position" name="position" required />
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" [(ngModel)]="newMember.email" name="email" />
+        </div>
+
+        <div class="form-group">
+          <label>Display Order</label>
+          <input type="number" [(ngModel)]="newMember.displayOrder" name="displayOrder" />
+        </div>
+
+        <div class="form-group full-width">
+          <label>Image URL</label>
+          <input type="text" [(ngModel)]="newMember.imageUrl" name="imageUrl" />
+        </div>
+
+        <div class="form-group full-width">
+          <label>LinkedIn</label>
+          <input type="text" [(ngModel)]="newMember.linkedin" name="linkedin" />
+        </div>
+
+        <div class="form-group full-width">
+          <label>Twitter</label>
+          <input type="text" [(ngModel)]="newMember.twitter" name="twitter" />
+        </div>
+
+        <div class="form-group full-width">
+          <label>Bio</label>
+          <textarea [(ngModel)]="newMember.bio" name="bio" rows="5"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" [(ngModel)]="newMember.active" name="active" />
+            Active
+          </label>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary" [disabled]="loading">
+          {{ loading ? 'Saving...' : 'Save Member' }}
+        </button>
+        <button type="button" class="btn-secondary" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="data-table" *ngIf="!isEditing">
+    <div *ngIf="loading" class="loading">
+      <div class="spinner"></div>
+    </div>
+
+    <table *ngIf="!loading && teamMembers.length > 0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Email</th>
+          <th>Order</th>
+          <th>Active</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let member of teamMembers">
+          <td>{{ member.id }}</td>
+          <td>{{ member.fullName }}</td>
+          <td>{{ member.position }}</td>
+          <td>{{ member.email || '-' }}</td>
+          <td>{{ member.displayOrder }}</td>
+          <td>
+            <span class="badge" [class.badge-success]="member.active" [class.badge-warning]="!member.active">
+              {{ member.active ? 'Yes' : 'No' }}
+            </span>
+          </td>
+          <td>
+            <button class="btn-edit" (click)="editMember(member)">✏️</button>
+            <button class="btn-delete" (click)="deleteMember(member.id!)">🗑️</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="!loading && teamMembers.length === 0" class="no-data">
+      <p>No team members yet. Add your first team member!</p>
+    </div>
+  </div>
+</div>
