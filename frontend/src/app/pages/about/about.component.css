@@ -7,7 +7,7 @@
   font-weight: 700;
   font-size: 32px;
   line-height: 1.26em;
-  letter-spacing: 4%;
+  letter-spacing: 0.04em;
   text-align: center;
   color: #FFFFFF;
   margin-bottom: 40px;
@@ -18,7 +18,7 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 1.172em;
-  letter-spacing: 7.11%;
+  letter-spacing: 0.02em;
   text-align: center;
   max-width: 986px;
   margin: 0 auto;

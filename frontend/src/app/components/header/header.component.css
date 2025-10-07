@@ -24,6 +24,12 @@
   height: 60px;
 }
 
+.logo-img {
+  width: 60px;
+  height: 60px;
+  display: block;
+}
+
 .logo-text {
   font-family: 'Satoshi', sans-serif;
   font-weight: 700;
@@ -45,12 +51,12 @@
 }
 
 .nav-tab {
-  padding: 39px 75px;
+  padding: 36px 64px;
   font-family: 'Satoshi', sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 1.1em;
-  letter-spacing: 6.4%;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #FFFFFF;
   background-color: #17181D;
@@ -58,6 +64,7 @@
   border-bottom: 1px solid #383A41;
   transition: all 0.3s ease;
   display: block;
+  position: relative;
 }
 
 .nav-tab:hover {
@@ -145,12 +152,12 @@
 }
 
 .nav-tab-mobile {
-  padding: 39px 75px;
+  padding: 28px 40px;
   font-family: 'Satoshi', sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 1.1em;
-  letter-spacing: 6.4%;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #FFFFFF;
   background-color: #17181D;

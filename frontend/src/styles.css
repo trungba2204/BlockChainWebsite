@@ -75,6 +75,43 @@ a {
   color: var(--primary-color);
 }
 
+/* Buttons - Secondary & Ghost */
+.btn-secondary {
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--text-white);
+  padding: 16px 32px;
+  border-radius: 65px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 20, 244, 0.3);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--text-white);
+  padding: 16px 32px;
+  border-radius: 65px;
+  border: 1px dashed var(--border-color);
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-ghost:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
 .card {
   background-color: rgba(35, 37, 44, 0.5);
   border: 1px solid var(--border-color);
@@ -106,6 +143,30 @@ a {
   margin-bottom: 60px;
 }
 
+/* Layout grid utilities */
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .container {
@@ -119,6 +180,13 @@ a {
   .section-title {
     font-size: 32px;
     margin-bottom: 40px;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
